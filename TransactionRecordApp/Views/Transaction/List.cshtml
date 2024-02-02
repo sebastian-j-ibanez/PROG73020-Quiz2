@@ -1,0 +1,33 @@
+﻿<!--Here we set the model type-->
+@model List<Transaction>
+
+<!--Here we set the ViewBag Title-->
+@{
+	ViewData["Title"] = "All transactions";
+}
+<table class="table table-bordered table-striped">
+	<!--Here we set the table head column names-->
+	<thead>
+		<tr>
+			<th>Ticker Symbol</th>
+			<th>Company Name</th>
+			<th>Quantity</th>
+			<th>Share Price</th>
+			<th>Gross Value</th>
+		</tr>
+	</thead>
+	
+	<!--Here we loop through the transactions in the model and add their info to the table-->
+	<tbody>
+		@foreach (Transaction t in Model)
+		{
+			<tr>
+				<td>@t.TickerSymbol</td>
+				<td>@t.CompanyName</td>
+				<td>@t.Quantity</td>
+				<td>@t.SharePrice</td>
+				<td>@t.GrossValue</td>
+			</tr>
+		}
+	</tbody>
+</table>
